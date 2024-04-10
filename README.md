@@ -5,3 +5,6 @@ Exchange App es una aplicación de consola desarrollada en Java que permite a lo
 Soporte para múltiples divisas: ARS (Peso Argentino), USD (Dólar Estadounidense), EUR (Euro), CLP (Peso Chileno), BOB (Peso Boliviano), PEN (Peso Peruano), BRL (Real Brasileño).
 Conversión de montos entre las divisas soportadas.
 Interfaz de usuario simple basada en consola.
+## Dependencias
+Gson: Utilizado para deserializar los datos JSON de la API de ExchangeRate-API.
+Lombok: Proporciona anotaciones para minimizar el código repetitivo.
