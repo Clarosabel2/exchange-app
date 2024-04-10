@@ -1,9 +1,6 @@
 package org.example.controller;
 
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 import org.example.models.Coin;
 import org.example.models.CoinExchangeRate;
 
@@ -34,8 +31,7 @@ public class CoinController {
     }
 
     public static double convertTo(double amount) {
-        double result = amount * _coin.getPrice().get(coins[valueCoin - 1]);
-        return result;
+        return amount * _coin.getPrice().get(coins[valueCoin - 1]);
     }
 
     public static String[] getCoinSlt() {
