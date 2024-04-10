@@ -15,7 +15,6 @@ import java.net.http.HttpResponse;
 
 public class CoinController {
     private static final String[] coins = {"ARS", "USD", "EUR", "CLP", "BOB", "PEN", "BRL"};
-    private static String coinJson;
     private static Coin _coin = new Coin();
     public static int valueCoin;
 
