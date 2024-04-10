@@ -6,5 +6,5 @@ Soporte para múltiples divisas: ARS (Peso Argentino), USD (Dólar Estadounidens
 Conversión de montos entre las divisas soportadas.
 Interfaz de usuario simple basada en consola.
 ## Dependencias
-Gson: Utilizado para deserializar los datos JSON de la API de ExchangeRate-API.
-Lombok: Proporciona anotaciones para minimizar el código repetitivo.
+- Gson: Utilizado para deserializar los datos JSON de la API de ExchangeRate-API.
+- Lombok: Proporciona anotaciones para minimizar el código repetitivo.
