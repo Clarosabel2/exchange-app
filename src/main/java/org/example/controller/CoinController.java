@@ -9,11 +9,16 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CoinController {
     private static final String[] coins = {"ARS", "USD", "EUR", "CLP", "BOB", "PEN", "BRL"};
     private static Coin _coin = new Coin();
     public static int valueCoin;
+    public static double amountC;
+    public static List<String>exchangeRegistry = new ArrayList<String>();
 
     public static void searchCoin(int op) throws IOException, InterruptedException {
         if (statusOp(op)) {
@@ -31,6 +36,7 @@ public class CoinController {
     }
 
     public static double convertTo(double amount) {
+        amountC = amount;
         return amount * _coin.getPrice().get(coins[valueCoin - 1]);
     }
 
@@ -54,5 +60,11 @@ public class CoinController {
             throw new NumberFormatException("Opcion Invalida");
         }
         return true;
+    }
+
+    public static void saveRegistry() {
+        //FECHA HORA 1 USD => $*** ARS CANTIADAD: $USD = $ ARS
+        LocalDateTime date = LocalDateTime.now();
+        exchangeRegistry.add("Fecha y hora:"+ date + "|| 1" + _coin.getSymbol() + " => "+amountC+" "+coins[valueCoin-1]);
     }
 }
