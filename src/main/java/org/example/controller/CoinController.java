@@ -14,12 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CoinController {
+
+    //Divisas con las que opera la app
     private static final String[] coins = {"ARS", "USD", "EUR", "CLP", "BOB", "PEN", "BRL"};
+    //Variables que las utilizo como cache
     private static Coin _coin = new Coin();
     public static int valueCoin;
     public static double amountC;
     public static List<String>exchangeRegistry = new ArrayList<String>();
 
+
+    //Esta funcion se entrega de buscar la divisa selecciona por el usuario y crea el objeto Coin
     public static void searchCoin(int op) throws IOException, InterruptedException {
         if (statusOp(op)) {
             Gson gson = new Gson();
@@ -35,6 +40,7 @@ public class CoinController {
         }
     }
 
+    //Esta funcion se encarga convertir la cantidad proporcionada por el usuario y la convierte a la divisa deseada
     public static double convertTo(double amount) {
         amountC = amount;
         return amount * _coin.getPrice().get(coins[valueCoin - 1]);
@@ -47,7 +53,7 @@ public class CoinController {
         info[2] = String.valueOf(_coin.getPrice().get(info[1]));
         return info;
     }
-
+    //Verifica que la opcion selecccionada este dentro de las divisas soportadas
     public static boolean statusOp(int op) {
         boolean flag = false;
         for (int i = 1; i < coins.length + 1; i++) {
@@ -61,9 +67,8 @@ public class CoinController {
         }
         return true;
     }
-
+    //Guarda un registro de las solicitudes realizadas
     public static void saveRegistry() {
-        //FECHA HORA 1 USD => $*** ARS CANTIADAD: $USD = $ ARS
         LocalDateTime date = LocalDateTime.now();
         exchangeRegistry.add("Fecha y hora:"+ date + "||"+amountC + _coin.getSymbol() + " => "+convertTo(amountC)+" "+coins[valueCoin-1]);
     }
