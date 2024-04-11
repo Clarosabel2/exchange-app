@@ -65,6 +65,6 @@ public class CoinController {
     public static void saveRegistry() {
         //FECHA HORA 1 USD => $*** ARS CANTIADAD: $USD = $ ARS
         LocalDateTime date = LocalDateTime.now();
-        exchangeRegistry.add("Fecha y hora:"+ date + "|| 1" + _coin.getSymbol() + " => "+amountC+" "+coins[valueCoin-1]);
+        exchangeRegistry.add("Fecha y hora:"+ date + "||"+amountC + _coin.getSymbol() + " => "+convertTo(amountC)+" "+coins[valueCoin-1]);
     }
 }
