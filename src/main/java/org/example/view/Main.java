@@ -92,10 +92,16 @@ public class Main {
                         CoinController.exchangeRegistry.forEach(System.out::println);
                     }
                     break;
+
+                case 3:
+                    System.out.println("Hasta luego, muchas gracias por utilizar nuestro Servicio :D");
+                    break;
+                default:
+                    System.out.println("Opcion Incorreta");
             }
 
         }while(opMenu!=3);
 
-        System.out.println("Hasta luego, muchas gracias por utilizar nuestro Servicio :D");
+
     }
 }
