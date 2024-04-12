@@ -20,7 +20,7 @@ public class CoinController {
     //Variables que las utilizo como cache
     private static Coin _coin = new Coin();
     public static int valueCoin;
-    public static double amountC;
+    public static Double amountC;
     public static List<String>exchangeRegistry = new ArrayList<String>();
 
 
@@ -47,7 +47,7 @@ public class CoinController {
     }
 
     public static String[] getCoinSlt() {
-        String[] info = new String[3];
+        String[] info = new String[4];
         info[0] = _coin.getSymbol();
         info[1] = coins[valueCoin - 1];
         info[2] = String.valueOf(_coin.getPrice().get(info[1]));

@@ -64,7 +64,8 @@ public class Main {
 
                                 System.out.println("1 " + CoinController.getCoinSlt()[0] + " => $" + CoinController.getCoinSlt()[2] + " " + CoinController.getCoinSlt()[1]);
                                 System.out.println("Ingrese el monto a convertir: ");
-                                System.out.println("Son: " + CoinController.convertTo(sc.nextDouble()) + " " + CoinController.getCoinSlt()[1]);
+                                double amount=sc.nextDouble();
+                                System.out.println(amount+" "+CoinController.getCoinSlt()[0]+" a "+CoinController.getCoinSlt()[1]+" Son: " + CoinController.convertTo(amount) + " " + CoinController.getCoinSlt()[1]);
                                 CoinController.saveRegistry();
                                 do {
                                     System.out.println("""
